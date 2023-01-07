@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Inheritance and Prototype</title>
+</head>
+
+<body>
+    <h1 style="text-align:center;text-decoration:underline">Inheritance and Prototype</h1>
+    <h1>Q.1 Create 2 objects - parent and child. Attach methods to parent and use
+        those methods in child object using parents prototype</h1>
+    <pre>
+        <h2>
+        const ParentObj = {
+            calAge: function () {
+              console.log(`${this.fname} ${this.lname} ${this.age}`);
+            },
+          };
+          
+          const childObj = Object.create(ParentObj);
+          childObj.fname = "EA18";
+          childObj.lname = "18";
+          childObj.age = "Oct Batch";
+          
+          console.log(childObj);
+          childObj.calAge();
+          </h2>
+    </pre>
+
+
+    <h1>Q.2 Write code to explain prototype chaining</h1>
+    <pre>
+        <h2>
+        function Person() {
+            this.name = 'John'
+        }
+        
+        // adding property 
+        Person.prototype.name = 'Peter';
+        Person.prototype.age = 23
+        
+        const person1 = new Person();
+        
+        console.log(person1.name); // John
+        console.log(person1.age); // 23
+        </h2>
+    </pre>
+
+
+    <h1>Q.3 Add a method to calculate sum of all elements in Array in array's protype, use that method to calculate sum
+        for multiple arrays</h1>
+    <pre>
+        <h2>
+        const calSum= {
+            sumArr:function(arr){
+              let sum=0;
+              for(let i = 0; i < arr.length; i++){
+                sum+=arr[i]
+              }
+              console.log(sum);
+            }
+          }
+          calSum.sumArr([1,2,3,4,5])  
+          calSum.sumArr([6,7,8,9,10])])  
+        </h2>
+    </pre>
+
+
+    <h1>Q.4 Write a JavaScript function to retrieve all the names of object's own and inherited properties.</h1>
+    <pre>
+        <h2>
+        const user = {
+            name: 'Ravi',
+            age: 30
+        }
+        const prop = Object.getOwnPropertyNames(user)
+
+        console.log(prop) // [ 'name', 'age' ]
+        </h2>
+    </pre>
+
+</body>
+
+</html>
